@@ -49,7 +49,7 @@ d3.json('data/dataset.json')
       .attr("height", height + margin.top + margin.bottom)
 
     const draw = (ds) => {
-      const smiles = svg.selectAll('.smile').data(ds)
+      const smiles = svg.selectAll('.smile').data(ds, (d) => d.id)
 
       smiles.exit().remove()
 
